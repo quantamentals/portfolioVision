@@ -1,9 +1,0 @@
-setup.cfg
-setup.py
-portVision/__init__.py
-portVision.egg-info/PKG-INFO
-portVision.egg-info/SOURCES.txt
-portVision.egg-info/dependency_links.txt
-portVision.egg-info/not-zip-safe
-portVision.egg-info/requires.txt
-portVision.egg-info/top_level.txt
