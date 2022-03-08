@@ -1,3 +1,4 @@
+setup.cfg
 setup.py
 portVision/__init__.py
 portVision.egg-info/PKG-INFO
