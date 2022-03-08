@@ -1,5 +1,6 @@
 setup.cfg
 setup.py
+portVision/__init__.py
 portfolioVision.egg-info/PKG-INFO
 portfolioVision.egg-info/SOURCES.txt
 portfolioVision.egg-info/dependency_links.txt
