@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+portfolioVision.egg-info/PKG-INFO
+portfolioVision.egg-info/SOURCES.txt
+portfolioVision.egg-info/dependency_links.txt
+portfolioVision.egg-info/not-zip-safe
+portfolioVision.egg-info/requires.txt
+portfolioVision.egg-info/top_level.txt
