@@ -1,8 +1,0 @@
-requests
-pandas
-numpy
-pandas-datareader
-matplotlib
-scipy
-yfinance
-beautifulsoup4
