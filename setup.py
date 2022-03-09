@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="portVision",
-    version="0.1",
+    version="0.5",
     description="Portfolio Analysis library for Cadence practice",
     homepage="#",
     author="Michael A. Ballard",

@@ -3,12 +3,12 @@ import pandas as pd
 from portVision.handler import datahandler
 
 def write_prices(df):
-    conn = sqlite3.connect("./portVision/data/universeDB")
+    conn = sqlite3.connect("universeDB")
     df.to_sql('adjclose',conn,if_exists="replace")
     conn.close()
 
 def append_prices(df):
-    conn = sqlite3.connect("./portVision/data/universeDB")
+    conn = sqlite3.connect("universeDB")
     existing = read_prices()
     for col in df.columns:
         existing[col]= df[col]
@@ -16,7 +16,7 @@ def append_prices(df):
     conn.close()
 
 def read_prices():
-    conn = sqlite3.connect("./portVision/data/universeDB")
+    conn = sqlite3.connect("universeDB")
     sql = """ SELECT * from adjclose"""
     df = pd.read_sql(sql,conn,index_col="Date")
     return df
