@@ -6,3 +6,4 @@ matplotlib
 scipy
 yfinance
 beautifulsoup4
+html5lib
