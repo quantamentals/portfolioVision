@@ -1,4 +1,4 @@
-from portVision.data import *
-from portVision.utils import *
-from portVision.analysis import *
+from .data_handler import *
+from .portfolio_utils import *
+from .analysis import *
 
