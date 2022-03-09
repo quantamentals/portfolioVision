@@ -1,4 +1,4 @@
-from portVision.utils.returns import stock_returns 
+from src.utils.returns import stock_returns 
 
 def build_portfolio(df):
     extended_db = stock_returns(df)

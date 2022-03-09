@@ -3,7 +3,7 @@ from gettext import install
 import setuptools 
 
 setuptools.setup(
-    name="portfolio_vision",
+    name="portVision",
     version="0.2",
     description="Portfolio Analysis library for Cadence practice",
     homepage="#",
