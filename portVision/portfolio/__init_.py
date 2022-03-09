@@ -1,2 +1,1 @@
-from utils import *
-from returns import *
+__all__ = ["utils", "returns"]

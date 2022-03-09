@@ -9,7 +9,7 @@ setuptools.setup(
     homepage="#",
     author="Michael A. Ballard",
     author_email="ballard.michael@columbia.edu",
-    packages=setuptools.find_packages("portVision",include=["handler","portfolio","analysis"]),
+    packages=setuptools.find_packages("portVision",include=["handler","portfolio"]),
     install_requires=["requests","pandas","numpy","pandas-datareader","matplotlib", "scipy","yfinance","beautifulsoup4"],
     )
     
