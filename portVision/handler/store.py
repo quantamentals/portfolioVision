@@ -1,6 +1,6 @@
 import sqlite3
 import pandas as pd
-from src.handler import datahandler
+from portVision.handler import datahandler
 
 def write_prices(df):
     conn = sqlite3.connect("./portVision/data/universeDB")
