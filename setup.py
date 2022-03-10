@@ -2,9 +2,9 @@ import setuptools
 
 setuptools.setup(
     name="portVision",
-    version="0.6",
+    version="0.7",
     description="Portfolio Analysis library for Cadence practice",
-    homepage="#",
+    homepage="https://github.com/quantamentals/portfolioVision",
     author="Michael A. Ballard",
     author_email="ballard.michael@columbia.edu",
     packages=['portVision','portVision.handler','portVision.portfolio','portVision.types'],
@@ -17,8 +17,8 @@ setuptools.setup(
          "scipy",
          "yfinance",
          "beautifulsoup4",
-         "html5lib"
-
+         "html5lib",
+         "seaborn"
          ],
     zip_safe=False
     )
@@ -28,4 +28,4 @@ setuptools.setup(
 
 # python setup.py sdist  
 
-# twine upload dist/*  
+# twine upload dist/* 
