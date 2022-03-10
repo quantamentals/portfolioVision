@@ -25,3 +25,7 @@ setuptools.setup(
     
 
 # python3 -m pip install -e.
+
+# python setup.py sdist  
+
+# twine upload dist/*  
