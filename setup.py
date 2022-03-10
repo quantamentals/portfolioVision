@@ -7,7 +7,7 @@ setuptools.setup(
     homepage="#",
     author="Michael A. Ballard",
     author_email="ballard.michael@columbia.edu",
-    packages=['portVision','portVision.handler','portVision.portfolio'],
+    packages=['portVision','portVision.handler','portVision.portfolio','portVision.types'],
     install_requires=[
         "requests",
         "pandas",
