@@ -1,16 +1,19 @@
 import pandas_datareader as web
+import numpy as np
 
 def stock_returns(prices_df): #change to just stock
-    cols = prices_df.columns
+    df = prices_df.copy()
+    cols = df.columns
     for symbol in cols:
-        prices_df[f"{symbol} returns"] = prices_df[symbol].pct_change()
-    prices_df.dropna()
-    return prices_df
+        df[f"{symbol} returns"] = df[symbol].pct_change()
+    df.dropna(inplace=True)
+    return df
 
 
 def portfolio_returns(prices_df): # change to just portfolio
     rets = stock_returns(prices_df)
     return rets[[asset for asset in rets.columns if 'returns' in asset]]
+
 
 def ewp(port_rets):
     no_assets = len(port_rets.columns)
@@ -26,7 +29,18 @@ def ewp_contribs(port_rets):
     return equal_contrib
 
 
+def _ewp_stats(port_rets):
+    contrib = ewp_contribs(port_rets)
+    stats = contrib.agg(["mean","std"]).T
+    return stats
 
+
+def ewp_expected(port_rets):
+    stats = _ewp_stats(port_rets)
+    stats.columns=['er','vol']
+    stats['er'] = stats['er'] * 252
+    stats['vol'] = stats['vol'] * np.sqrt(252)
+    return stats
 
     
 

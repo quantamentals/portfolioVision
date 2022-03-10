@@ -12,5 +12,7 @@ portVision/handler/datahandler.py
 portVision/handler/get_etfs.py
 portVision/handler/store.py
 portVision/portfolio/__init_.py
+portVision/portfolio/analysis.py
 portVision/portfolio/returns.py
 portVision/portfolio/utils.py
+portVision/types/__init__.py
