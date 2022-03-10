@@ -1,5 +1,9 @@
 import pandas_datareader as web
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns 
+plt.style.use('seaborn')
+
 
 def stock_returns(prices_df): #change to just stock
     df = prices_df.copy()
@@ -43,5 +47,14 @@ def ewp_expected(port_rets):
     stats['er'] = stats['er'] * 252
     return stats
 
-    
+
+def display_ewp(port_rets):
+    summary = ewp_expected(port_rets)
+    summary.plot(kind="scatter",x="vol",y="er",figsize=(13,9), s=50, fontsize=15)
+    for i in summary.index:
+        plt.annotate(i, xy=(summary.loc[i, "vol"], summary.loc[i,"er"]), size=15)
+    plt.xlabel("Annual Volatility(std)",fontsize=15)
+    plt.ylabel("Expected Return")
+    plt.title("Expected Return / Volatility")
+    plt.show()
 
