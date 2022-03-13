@@ -1,8 +1,10 @@
+from email import utils
 import pandas_datareader as web
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns 
 plt.style.use('seaborn')
+from portVision.handler import datahandler 
 
 
 def stock(prices_df): #change to just stock
@@ -32,3 +34,19 @@ def getExpectedReturn(port_rets,ticker,annualised=True):
         return expected_return_annual
         
     return expected_return_daily
+
+def get_benchmarks(index:str="^GSPC",rf:str="TLT"):
+
+    """Returns the expected value for the market rate and the risk free rate"""
+    benchmarks = datahandler.get_close([index, rf])
+    benchmarks_ret = portfolio(benchmarks)
+    rf = getExpectedReturn(benchmarks_ret,rf, annualised=True)
+    Er_market = getExpectedReturn(benchmarks_ret,index,annualised='True')
+    return Er_market, rf
+
+def capm(rf,beta,market_er):
+    return rf+beta*(market_er-rf )
+
+def capm_ticker(symbol):
+    """ Get benchmarks, rf and calc beta via risk module the return capm"""
+    pass 
