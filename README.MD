@@ -11,8 +11,10 @@ from portVision.handler import datahandler
 
 universe = ["GLD","TLT","IWM"]
 
-data = datahandler.get_close(universe)
-
-port = utils.build_portfolio(data)
+port = utils.build_portfolio(universe)
 
 ```
+
+## To dos
+
+1. add start and end params to build portfolio

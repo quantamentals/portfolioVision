@@ -42,3 +42,9 @@ tbl = body.findall('//*[@id="MarketData-MarketsSectionTable-4"]/section/div[1]/d
 
 # print(tables)
 # tbodies = soup.find_all("tbody", attrs={"class": "BasicTable-symbol"})
+
+"""
+
+
+
+"""

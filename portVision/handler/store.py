@@ -30,3 +30,10 @@ def append_universe(symbols_list):
      df = datahandler.get_close(symbols_list)
      append_prices(df)
      return df
+
+
+def get_universe_by_allocation():
+    pass 
+
+def set_allocated():
+    pass 
