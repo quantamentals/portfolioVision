@@ -21,7 +21,7 @@ def portfolio(prices_df): # change to just portfolio
     return rets[[asset for asset in rets.columns if 'returns' in asset]]
 
 
-def getExpectedReturn(port_rets,ticker,annualised=True):
+def expected(port_rets,ticker,annualised=True):
     """ This is the mean historical return either daily or annualized"""
 
     daily_returns = port_rets[f'{ticker} returns']
@@ -35,8 +35,7 @@ def getExpectedReturn(port_rets,ticker,annualised=True):
         
     return expected_return_daily
 
-def get_benchmarks(index:str="^GSPC",rf:str="TLT"):
-
+def benchmarks(index:str="^GSPC",rf:str="TLT"):
     """Returns the expected value for the market rate and the risk free rate"""
     benchmarks = datahandler.get_close([index, rf])
     benchmarks_ret = portfolio(benchmarks)
@@ -47,6 +46,6 @@ def get_benchmarks(index:str="^GSPC",rf:str="TLT"):
 def capm(rf,beta,market_er):
     return rf+beta*(market_er-rf )
 
-def capm_ticker(symbol):
+def capm_by_ticker(symbol):
     """ Get benchmarks, rf and calc beta via risk module the return capm"""
     pass 
