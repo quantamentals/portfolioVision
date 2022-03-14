@@ -39,8 +39,8 @@ def benchmarks(index:str="^GSPC",rf:str="TLT"):
     """Returns the expected value for the market rate and the risk free rate"""
     benchmarks = datahandler.get_close([index, rf])
     benchmarks_ret = portfolio(benchmarks)
-    rf = getExpectedReturn(benchmarks_ret,rf, annualised=True)
-    Er_market = getExpectedReturn(benchmarks_ret,index,annualised='True')
+    rf = expected(benchmarks_ret,rf, annualised=True)
+    Er_market = expected(benchmarks_ret,index,annualised='True')
     return Er_market, rf
 
 def capm(rf,beta,market_er):

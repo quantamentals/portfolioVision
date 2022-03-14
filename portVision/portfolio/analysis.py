@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt 
+
 def ewp(port_rets):
     df = port_rets.copy()
     no_assets = len(df.columns)
