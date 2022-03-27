@@ -29,19 +29,17 @@ def expected(port_rets,ticker,annualised=True):
     expected_return_daily = daily_returns.mean()
 
     if annualised:
-        expected_return_annual = ((1+expected_return_daily)**250)-1
-        
-        return expected_return_annual
+        return ((1+expected_return_daily)**250)-1
         
     return expected_return_daily
 
 def benchmarks(index:str="^GSPC",rf:str="TLT"):
     """Returns the expected value for the market rate and the risk free rate"""
-    benchmarks = datahandler.get_close([index, rf])
+    benchmarks = datahandler.get_closes([index, rf])
     benchmarks_ret = portfolio(benchmarks)
-    rf = expected(benchmarks_ret,rf, annualised=True)
+    risk_free = expected(benchmarks_ret,rf, annualised=True)
     Er_market = expected(benchmarks_ret,index,annualised='True')
-    return Er_market, rf
+    return Er_market, risk_free
 
 def capm(rf,beta,market_er):
     return rf+beta*(market_er-rf )
