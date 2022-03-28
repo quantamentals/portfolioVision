@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt 
+import numpy as np
 
 def ewp(port_rets):
     df = port_rets.copy()
@@ -26,6 +27,7 @@ def ewp_expected(port_rets):
     stats = _ewp_stats(port_rets)
     stats.columns=['er','vol']
     stats['er'] = stats['er'] * 252
+    stats['vol'] = stats['vol'] * np.sqrt(250)  #BUG: annualize the vol as well
     return stats
 
 
