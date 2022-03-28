@@ -3,3 +3,5 @@ sandbox.py
 requirements.txt
 sandbox.ipynb
 archive.txt
+all_stocks_5yr.csv
+close_cross_section.csv

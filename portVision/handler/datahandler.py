@@ -1,6 +1,7 @@
 from typing import List, TypeVar, AnyStr
 import pandas_datareader as web
 import pandas as pd 
+import yfinance as yf
 
 DF = TypeVar('DF')
 
