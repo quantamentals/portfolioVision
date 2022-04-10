@@ -6,3 +6,7 @@ def build_portfolio(universe):
     extended_db = stock(df)
     port = extended_db[[col for col in extended_db.columns if "returns" in col]]
     return port
+
+
+def normalized_closes():
+    pass 
