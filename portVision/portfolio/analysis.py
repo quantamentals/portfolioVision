@@ -40,3 +40,5 @@ def display_ewp(port_rets):
     plt.ylabel("Expected Return")
     plt.title("Expected Return / Volatility")
     plt.show()
+
+
