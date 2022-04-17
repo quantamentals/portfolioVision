@@ -7,7 +7,34 @@ plt.style.use('seaborn')
 from portVision.handler import datahandler 
 
 
+def calc_simple(df):
+    # use a conditional to check for Adj Close, Close or price to make dynamic
+    return (df['Adj Close'] / df['Adj Close'].shift(1)) - 1 
+
+def calc_avg_daily(df):
+    return calc_simple(df).mean()
+
+def calc_avg_annual(df):
+    return calc_avg_daily(df) * 250
+
+def calc_log(df):
+    return np.log(df['Adj Close'] / df['Adj Close'].shift(1))
+
+def calc_avg_log_daily(df):
+    return calc_log(df).mean()
+
+def calc_avg_log_annual(df):
+    return calc_avg_log_daily(df) * 250
+
+def display_simple(df):
+    # create option for plotly or matplotlib
+    return calc_simple(df).plot(figsize=(8,5))
+
+def display_log(df):
+    return calc_log(df).plot(figsize=(8,5))
+
 def stock(prices_df): #change to just stock
+    """Calculate returns on a collection of close prices accross tickers"""
     df = prices_df.copy()
     cols = df.columns
     for symbol in cols:
@@ -15,11 +42,10 @@ def stock(prices_df): #change to just stock
     df.dropna(inplace=True)
     return df
 
-
-def portfolio(prices_df): # change to just portfolio
+def portfolio(prices_df):
+    """ Filter stock prices and returns for only returns"""
     rets = stock(prices_df)
     return rets[[asset for asset in rets.columns if 'returns' in asset]]
-
 
 def expected(port_rets,ticker,annualised=True):
     """ This is the mean historical return either daily or annualized"""
