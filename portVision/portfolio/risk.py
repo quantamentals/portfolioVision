@@ -2,6 +2,23 @@ import numpy as np
 from scipy.stats import linregress
 from portVision.handler import datahandler
 
+
+"""Single stock related"""
+
+def daily_vol(df):
+    return (df['Adj Close'] / df['Adj Close'].shift(1)).std()
+
+def annual_vol(df):
+    return daily_vol(df) * np.sqrt(250)
+
+def daily_log_vol(df):
+    return np.log(df['Adj Close'] / df['Adj Close'].shift(1)).std()
+
+def annual_log_vol(df):
+    return daily_log_vol(df) * np.sqrt(250)
+
+"""Portfolio Related """
+
 def asset_vol(port,ticker, annualized=True):
     daily_vol = port[ticker].std()
     if annualized == True:
