@@ -10,7 +10,6 @@ from portVision.handler import datahandler
 Price based metrics
 
 """
-
 def calc_simple(df):
     # use a conditional to check for Adj Close, Close or price to make dynamic
     return (df['Adj Close'] / df['Adj Close'].shift(1)) - 1 
@@ -41,7 +40,6 @@ def display_log(df):
 Portfolio Based Metrics based on a data frame of portflio utilities
 
 """
-
 def portfolio(rets_df, weights):
     # add a check to insure that length of weights equals the length of columns in rets_df
     # also add a check to make sure that weights sum to one
